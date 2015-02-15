@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <title>Bloomington Code School Playground</title>
+  <!-- Include our styles for this page -->
+  <script type="text/javascript" src="../lib/codemirror-4.12/lib/codemirror.js"></script>
+  <link rel="stylesheet" href="../lib/codemirror-4.12/lib/codemirror.css"></link>
+  <script type="text/javascript" src="../lib/codemirror-4.12/mode/javascript/javascript.js"></script>
+  <link rel="stylesheet" href="../lib/codemirror-4.12/theme/blackboard.css"></link>
+  <link rel="stylesheet" href="style.css"></link>
+</head>
+<body>
+  <h1>Bloomington Code School Playground</h1>
+  <h2>Version 2, using CodeMirror.</h2>
+  <!-- Create html elements used by playground javascript -->
+  <div class="input"></div>
+  <div class="codeMessages">
+    <p>Result:</p>
+    <p class="error"></p>
+    <p class="result"></p>
+  </div>
+  <p class="userOutput"></p>
+  <!-- We load the script last because it uses elements on the page. -->
+  <script type="text/javascript" src="playground.js"></script>
+</body>
+</html>
