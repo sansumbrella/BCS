@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+  <title>Bloomington Code School Playground</title>
+  <style>
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      background: #000;
+      color: #CCC;
+      width: 800px;
+      margin: 0 auto;
+    }
+
+    .section {
+      float: left;
+      width: 400px;
+      height: 300px;
+    }
+
+    .input {
+      width: 380px;
+      height: 280px;
+      margin: 0;
+      padding: 10px;
+
+      border: none;
+      outline: none;
+
+      background: #333;
+      color: #FF6;
+    }
+
+    .userOutput {
+      width: 380px;
+      height: 280px;
+      margin: 0;
+      padding: 10px;
+
+      background: #666;
+      color: #0F9;
+    }
+
+    .result {
+      color: #09F;
+    }
+    .error {
+      color: #F09;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bloomington Code School Playground</h1>
+  <h2>Version 1, no libraries.</h2>
+  <!-- Create html nodes  -->
+  <div class="section">
+    <textarea class="input"></textarea>
+    <pre class="error"></pre>
+    <pre class="result"></pre>
+  </div>
+  <div class="section">
+    <pre class="userOutput"></pre>
+  </div>
+
+  <script>
+    // Get references to our dom nodes in javascript.
+    var result = document.querySelector(".result"),
+        input = document.querySelector(".input"),
+        userOutput = document.querySelector(".userOutput"),
+        errorOutput = document.querySelector(".error"),
+        timeout;
+
+    // Convenience function to write to user output.
+    var write = function(text) {
+      userOutput.textContent += text;
+    }
+
+    // Convenience function to clear user output.
+    var clearOutput = function() {
+      userOutput.textContent = "";
+    }
+
+    // Function to evaluate the user script and show error messages.
+    var evaluateUserCode = function() {
+      if (timeout) {
+        // still writing, don't show error yet.
+        clearTimeout(timeout);
+        errorOutput.textContent = "";
+        result.textContent = "";
+      }
+
+      try {
+        // Run the input code
+        clearOutput();
+        result.textContent = eval(input.value);
+      }
+      catch(err) {
+        // If there was a problem with the code, write the error
+        timeout = setTimeout(function() {
+          errorOutput.textContent = "Code error: " + err.message;
+        }, 250);
+      }
+    }
+
+    // Run our evaluate function whenever text is written in the input textarea.
+    input.addEventListener("input", evaluateUserCode);
+  </script>
+</body>
+</html>
