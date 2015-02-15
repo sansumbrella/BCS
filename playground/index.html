@@ -5,10 +5,20 @@
   <style>
     body {
       font-family: Helvetica, Arial, sans-serif;
-      background: #000;
-      color: #CCC;
-      width: 800px;
+      background: #333;
+      color: #FFF;
+      width: 802px;
       margin: 0 auto;
+
+      font-size: 21px;
+    }
+
+    h1 {
+      font-size: 1.3em;
+    }
+
+    h2 {
+      font-size: 1.1em;
     }
 
     .section {
@@ -20,13 +30,14 @@
     .input {
       width: 380px;
       height: 280px;
-      margin: 0;
       padding: 10px;
+
+      font-size: 1em;
 
       border: none;
       outline: none;
 
-      background: #333;
+      background: #000;
       color: #FF6;
     }
 
@@ -36,7 +47,7 @@
       margin: 0;
       padding: 10px;
 
-      background: #666;
+      background: #000;
       color: #0F9;
     }
 
@@ -46,6 +57,11 @@
     .error {
       color: #F09;
     }
+
+    p {
+      font-family: monospace;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -54,11 +70,11 @@
   <!-- Create html nodes  -->
   <div class="section">
     <textarea class="input"></textarea>
-    <pre class="error"></pre>
-    <pre class="result"></pre>
+    <p class="error"></p>
+    <p class="result"></p>
   </div>
   <div class="section">
-    <pre class="userOutput"></pre>
+    <p class="userOutput"></p>
   </div>
 
   <script>
