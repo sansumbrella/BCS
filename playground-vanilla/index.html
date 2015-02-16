@@ -2,20 +2,19 @@
 <html>
 <head>
   <title>Bloomington Code School Playground</title>
+  <meta name="author" content="David Wicks">
+  <meta name="description" content="Javascript playground using no libraries.">
   <!-- Include our styles for this page -->
   <link rel="stylesheet" href="style.css"></link>
 </head>
 <body>
-  <h1>Bloomington Code School Playground</h1>
-  <h2>Version 1, no libraries.</h2>
+  <h1>Javascript Playground</h1>
   <!-- Create html elements used by playground javascript -->
+  <h3>Code</h3>
   <textarea class="input"></textarea>
-  <div class="codeMessages">
-    <p>Result:</p>
-    <p class="error"></p>
-    <p class="result"></p>
-  </div>
-  <p class="userOutput"></p>
+
+  <h3>Result</h3>
+  <div class="output"></div>
   <!-- We load the script last because it uses elements on the page. -->
   <script type="text/javascript" src="playground.js"></script>
 </body>
