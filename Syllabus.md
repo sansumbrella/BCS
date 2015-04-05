@@ -2,18 +2,26 @@ This course follows the Treehouse Front End Web Development track as of Feb 15, 
 The numbers by Treehouse courses indicate how long Treehouse thinks it will take to do each section.
 
 ### Week 1:
-- ~~Hello~~
+Hello, what are we doing here?
+
+Do the following in Treehouse this week:
 - ~~8 How to Make a Website~~
 
 ### Week 2:
+We started building the [course website](http://sansumbrella.github.io/BCS/) in HTML.
+
+Do the following in Treehouse this week:
 - ~~7 CSS Basics~~
 
 ### Week 3:
+We added some basic styling to the [course website](http://sansumbrella.github.io/BCS/) using CSS.
+
+Do the following in Treehouse this week:
 - ~~6 Javascript Basics~~
 - ~~2 HTML Forms~~
 
 ### Week 4:
-We built a [madlib text generator](in-class/madlib.js) in javascript.
+We built a [madlib text generator](in-class/madlib.js) in javascript. The code runs inside of our [js chalkboard](http://sansumbrella.github.io/BCS/chalkboard/).
 
 Do the following in Treehouse this week:
 - 4 Javascript Loops, Arrays, Objects
@@ -21,7 +29,7 @@ Do the following in Treehouse this week:
 - 1 HTML Tables
 
 ### Week 5:
-We will make our javascript update the page.
+We will turn our madlib text generator into a standalone page.
 
 Do the following in Treehouse this week:
 - 2 Interactive Web Pages Javascript
@@ -29,6 +37,8 @@ Do the following in Treehouse this week:
 - 5 AJAX Basics
 
 ### Week 6:
+Guest mentor: Brandon Pfeiffer.
+
 Do the following in Treehouse this week:
 - 2 Accessibility
 - 1.5 Website Optimization
