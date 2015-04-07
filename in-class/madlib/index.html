@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+  <section>
+    <p>Here is some <a class="adjective">ADJ</a> <a class="noun">NOUN</a>. Another <a class="adjective">ADJ</a> <a class="noun">NOUN</a> does this, too.</p>
+    <p>We just made a <a class="adjective">ADJ</a> madlib!</p>
+  </section>
+  <p>
+    <a class="button" onclick="generateMadlib()" href="#">Generate Madlib.</a>
+  </p>
+  <label for="nouns">Nouns:</label>
+  <input type="text" id="nouns" value="pie, Bloomington, chair, speaker, blackboard"/>
+  <label for="adjectives">Adjectives:</label>
+  <input type="text" id="adjectives" value="silly, strange, fearsome"/>
+
+  <script>
+    // Create arrays of possible replacement words.
+    var generateMadlib = function() {
+      // pickOne selects a random item from an array.
+      var pickOne = function(list) {
+        var index = Math.floor(Math.random() * list.length);
+        return list[index];
+      };
+      // Replace the text of all elements with an appropriate word from list.
+      var replaceAll = function(elements, appropriateWords) {
+        for( var i = 0; i < elements.length; i += 1 ) {
+          elements[i].textContent = pickOne( appropriateWords );
+        }
+      }
+
+      // Get our lists of things.
+      var nounElement = document.querySelector("#nouns");
+      var nouns = nounElement.value.split(", ");
+      var adjElement = document.querySelector("#adjectives");
+      var adjectives = adjElement.value.split(", ");
+
+      var adjectiveElements = document.querySelectorAll(".adjective");
+      var nounElements = document.querySelectorAll(".noun");
+
+      replaceAll( adjectiveElements, adjectives );
+      replaceAll( nounElements, nouns );
+    }
+
+    generateMadlib();
+  </script>
+</body>
