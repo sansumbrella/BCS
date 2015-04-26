@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <h1>Example SVG Masking</h1>
+  <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <mask id="mask">
+      <circle cx="70" cy="70" r="20"/>
+      <circle cx="50" cy="30" r="20"/>
+      <circle cx="30" cy="50" r="20"/>
+    </mask>
+    <image xlink:href="sunset.jpg" x="0" y="0" height="100" width="100" mask="url(#mask)" />
+  </svg>
+</body>
