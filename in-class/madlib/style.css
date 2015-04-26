@@ -1,0 +1,31 @@
+html {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  width: 640px;
+  margin: 0 auto;
+  color: #FFF;
+  background: #333;
+}
+
+a {
+  color: #FF0;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.adjective {
+  color: #F0F;
+}
+
+.noun {
+  color: #0FF;
+}
+
+textarea {
+  width: 640px;
+  height: 64px;
+  background: #333;
+  display: block;
+}
