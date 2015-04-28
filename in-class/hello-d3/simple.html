@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css"/>
+  <script type="text/javascript" src="lib/d3/d3.js"></script>
+</head>
+<body>
+  <h1>Hello, Data-Driven Documents</h1>
+
+  <script type="text/javascript">
+    var dataset = [28,50,34,5,19,47,20,31,3,47];
+    var w = 700;
+    var h = 500;
+    var getLeftPaddingForElement = function (i) {
+      var x = dataset[i];
+      for( var j = 0; j < i; j += 1 ) {
+        x += dataset[j] * 2;
+      }
+      return x;
+    }
+
+    var svg = d3.select("body")
+                .append("svg");
+    svg.attr("width", w)
+      .attr("height", h);
+
+    svg.selectAll("circle")
+      .data(dataset)
+      .enter()
+      .append("circle")
+        .attr("r", function (d) {
+          return d;
+        })
+        .attr("fill", function (d) {
+          return d3.hsl(d, 1.0, 0.5).toString();
+        })
+        .attr("cx", function (d, i) {
+          return getLeftPaddingForElement(i);
+        })
+        .attr("cy", h / 2);
+  </script>
+</body>
+</html>
