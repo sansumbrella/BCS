@@ -46,19 +46,19 @@ You can tell the function object to perform its instructions by placing parenthe
 ```javascript
 // A function that doesn’t do anything
 function doNothing() {
-	// Our list of instructions goes inside the function block (enclosed by curly braces '{}').
+  // Our list of instructions goes inside the function block (enclosed by curly braces '{}').
 }
 
 // Run the instructions inside of our doNothing function.
 doNothing();
 
 // A function that prints the name of the object given to it to the console.
-function announceObject( obj ) {
-	console.log( "Introducting the object: " + obj.name );
+function announceObject(obj) {
+  console.log("Introducting the object: " + obj.name);
 }
 
 // Run the instructions inside of announceObject with our first object from above:
-announceObject( object );
+announceObject(object);
 ```
 
 ### Creating Many Similar Objects
@@ -67,43 +67,43 @@ If you want to create a lot of objects that have the same basic properties, you 
 
 ```javascript
 // Function to create an object with default properties.
-function createObject() {
-	var that = {},
-			x = 20,
-			y = 20,
-			name = "Default Name";
+function createObject(name) {
+  var obj = {},
+      x = 20,
+      y = 20,
+      name = name || "Default Name";
 
-	function announce() {
-		console.log( "Introducing myself: " + name );
-	}
+  function announce() {
+    console.log("Introducing myself: " + name);
+  }
 
-	that.x = x;
-	that.y = y;
-	that.name = name;
+  obj.x = x;
+  obj.y = y;
+  obj.announce = announce;
 
-	return that;
+  return obj;
 }
 
 // Function to create an object with passed-in properties
-function createObject( options ) {
-	var that = {},
-			x = options.x || 20,
-			y = options.y || 20,
-			name = options.name || "Default Name";
+function createObject(options) {
+  var obj = {},
+      x = options.x || 20,
+      y = options.y || 20,
+      name = options.name || "Default Name";
 
-	function announce() {
-		console.log( "Introducing myself: " + name );
-	}
+  function announce() {
+    console.log("Introducing myself: " + name);
+  }
 
-	that.x = 10;
-	that.y = 20;
-	that.name = name;
-	that.doSomething = doSomething;
+  obj.x = 10;
+  obj.y = 20;
+  obj.name = name;
+  obj.doSomething = announce;
 
-	return that;
+  return obj;
 }
 
-var object = createObject( { name: "Some Name" } );
+var object = createObject({ name: "Some Name" });
 
 ```
 
@@ -116,8 +116,8 @@ Arrays are lists of things in javascript. They are a special type of Object that
 var array = [];
 
 // Put items in the array.
-array.push( 1 );
-array.push( 2 );
+array.push(1);
+array.push(2);
 
 // Create an array with initial values.
 var array = [1, 2, 3, 4, 5];
@@ -136,50 +136,50 @@ Once you have an array of items, you can use functions to do things with every i
 
 ```javascript
 // Call function with each item in the array.
-array.forEach( function( item ) {
-	console.log( "Item: ", item );
-} );
+array.forEach(function (item) {
+  console.log("Item: ", item);
+});
 ```
 
 Array.forEach is very powerful, and you can do quite a lot with it. For certain situations, other Array functions can better model what you want to do. Below are some examples.
 
 ```javascript
 // Find the largest number in an array using reduce()
-var largest = array.reduce( function( a, b ) {
-	return Math.max( a, b );
-}, 0 );
+var largest = array.reduce(function (a, b) {
+  return Math.max(a, b);
+}, 0);
 
 // Equivalent using forEach()
 var largest = 0;
-array.forEach( function( element ) { 
-	largest = Math.max( largest, element );
-} );
+array.forEach(function (element) {
+  largest = Math.max(largest, element);
+});
 
 
 // Create a new array from the first array using map().
-var other = array.map( function( element ) {
-	return element * 2;
-} );
+var other = array.map(function (element) {
+  return element * 2;
+});
 
 // Equivalent using forEach()
 var other = [];
-array.forEach( function( element ) {
-	other.push( element * 2 );
-} );
+array.forEach(function (element) {
+  other.push(element * 2);
+});
 
 
 // Create a new array that contains some elements from the first array using filter().
-var smaller = array.filter( function( element ) {
-	return element < 5;
-} );
+var smaller = array.filter(function (element) {
+  return element < 5;
+});
 
 // Equivalent using forEach()
 var smaller = [];
-array.forEach( function( element ) {
-	if( element < 5 ) {
-		smaller.push( element );
-	}
-} );
+array.forEach(function (element) {
+  if (element < 5) {
+    smaller.push(element);
+  }
+});
 ```
 ### Logic Structures and Comparison
 
@@ -190,20 +190,20 @@ If you want to do something if a condition is not true, you can use `!` to indic
 ```javascript
 
 // `if` does something once if a condition is true.
-if( someNumber === 5 ) {
-	doSomething();
+if (someNumber === 5) {
+  doSomething();
 }
 else {
-	// If the condition is false, do something else.
+  // If the condition is false, do something else.
 }
 
 // `while` does something repeatedly until a condition is reached.
 // Here, we fill up an array with 100 objects.
 var array = [];
-while( array.length < 100 ) {
-	array.push( { value: (array.length + 1) } );
+while(array.length < 100) {
+  array.push({ value: (array.length + 1) });
 }
 
 ```
 
-Notice the similarity in structure between if() { ... }, while() { ... }, and function() { ... }. They all store instructions inside the curly braces. They differ in when you enter the curly braces to run those instructions. Also, of the three, only function is an object that you can store in a variable.
+Notice the similarity in structure between if() { ... }, while() { ... }, and function () { ... }. They all store instructions inside the curly braces. They differ in when you enter the curly braces to run those instructions. Also, of the three, only function is an object that you can store in a variable.
